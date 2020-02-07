@@ -8,4 +8,8 @@ def index(request):
     context = {'pList':pList}
     return render(request,"product/index.html",context)
 
+def search(request):
+    search_str = request.POST['search']
+    context = {'search_str':search_str}
+    return render(request,"product/search.html",context)
 
