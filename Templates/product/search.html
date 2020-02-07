@@ -12,9 +12,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'main' %}">Home<span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'main' %}">Home<span class="sr-only"></span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'product:index' %}">All Products<span class="sr-only"></span></a>
+          </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Add Product</a>
         </li>
@@ -29,6 +32,7 @@
     <p class="lead"><strong>Search Results for {{ search_str }}</strong></p>
     <hr>
     </div>
+    
 
 
 {% endblock %}
