@@ -10,6 +10,14 @@ def index(request):
 
 def search(request):
     search_str = request.POST['search']
-    context = {'search_str':search_str}
+    pList = getLists('product_list.txt')
+    searchList=[]
+    for p in pList:
+        if search_str in p[1]:
+            searchList.append(p)
+    context = {
+        'search_str':search_str,
+        'searchList':searchList
+    }
     return render(request,"product/search.html",context)
 
