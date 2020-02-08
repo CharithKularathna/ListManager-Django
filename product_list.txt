@@ -99,3 +99,7 @@ UL19,Icecream - Dibs,$349.77
 LM11,Cheese - Brick With Pepper,$730.67
 ZD86,Tomatoes - Heirloom,$768.08
 YB46,Flavouring - Rum,$76.16
+AB001,Form Product,$300.35
+CD002,Check Product 2,$800.80
+RS880,Nav Checker,$900.65
+AB002,Last Checker,$80.25
