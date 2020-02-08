@@ -1,5 +1,4 @@
 id,product_name,price
-FN61,Ham - Cooked,$679.40
 NZ34,Wine - Cabernet Sauvignon,$122.74
 BY56,V8 - Tropical Blend,$711.85
 YG13,Veal - Brisket, Provimi, Bone - In,$308.29
@@ -99,6 +98,3 @@ UL19,Icecream - Dibs,$349.77
 LM11,Cheese - Brick With Pepper,$730.67
 ZD86,Tomatoes - Heirloom,$768.08
 YB46,Flavouring - Rum,$76.16
-AB000,Test Product,$100
-AB000,Test Product,$100
-AB000,Test Product,$100

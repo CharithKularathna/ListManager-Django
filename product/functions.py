@@ -32,6 +32,23 @@ def addProduct(path, product):
     fo.write('\n'+pString)
     fo.close()
 
+def removeProduct(path, product_id):
+    readList = getLists(path)
+    for entry in readList:
+        if (product_id == entry[0]):
+            readList.remove(entry)
+            writeList(path,readList)
+            return 1
+    return 0
+
+def writeList(path,p_list):
+    fo = open(path,'w')
+    w_list=['id,product_name,price']
+    for entry in p_list:
+        w_list.append(','.join(entry))
+    fo.write('\n'.join(w_list))
+
+print(str(removeProduct("product_list.txt","AB333")))
 #addProduct("product_list.txt",["AB000","Test Product","$100"])
 #print (getLists("product_list.txt"))
 #addProduct("product_list.txt",["AB000","Test Product","$100"])
