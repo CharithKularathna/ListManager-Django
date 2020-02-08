@@ -34,3 +34,15 @@ def addResult(request):
     writeList = [product_id, product_name, price]
     addProduct(FILE_PATH,writeList)
     return render(request,"product/addResult.html")
+
+def removeResult(request):
+    product_id = request.POST['product_id']
+    result = removeProduct(FILE_PATH,product_id)
+    context = {
+        'product_id':product_id,
+        'result':result
+    }
+    return render(request,"product/removeResult.html",context)
+
+def remove(request):
+    return render(request,"product/remove.html")

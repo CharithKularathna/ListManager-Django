@@ -21,6 +21,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'product:add' %}">Add Product</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product:remove' %}">Remove a Product<span class="sr-only"></span></a>
+        </li>
       </ul>
       <form action="/product/search/" method="POST" class="form-inline mt-2 mt-md-0" style="font-family: 'Lato';">
         {% csrf_token %}

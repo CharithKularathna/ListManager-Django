@@ -7,5 +7,7 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('search/',views.search, name='search'),
     path('add/',views.add,name='add'),
-    path('addResult/',views.addResult,name='addResult')
+    path('addResult/',views.addResult,name='addResult'),
+    path('remove/',views.remove,name='remove'),
+    path('removeResult/',views.removeResult,name='removeResult'),
 ]

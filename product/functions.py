@@ -48,7 +48,7 @@ def writeList(path,p_list):
         w_list.append(','.join(entry))
     fo.write('\n'.join(w_list))
 
-print(str(removeProduct("product_list.txt","AB333")))
+#print(str(removeProduct("product_list.txt","AB333")))
 #addProduct("product_list.txt",["AB000","Test Product","$100"])
 #print (getLists("product_list.txt"))
 #addProduct("product_list.txt",["AB000","Test Product","$100"])
