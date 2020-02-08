@@ -29,11 +29,25 @@ def addResult(request):
     product_id = request.POST['product_id']
     product_name = request.POST['product_name']
     price = request.POST['price']
-    if (price[0]!="$"):
-        price = "$"+ price
-    writeList = [product_id, product_name, price]
-    addProduct(FILE_PATH,writeList)
-    return render(request,"product/addResult.html")
+    try:
+        if (price[0]=="$"):
+            float(price[1:])
+        else:
+            float(price)
+    except ValueError:
+        context = {
+            'result':0
+        }
+        return render(request,"product/addResult.html",context)
+    else:
+        if (price[0]!="$"):
+            price = "$"+ price
+        context = {
+            'result':1
+        }
+        writeList = [product_id, product_name, price]
+        addProduct(FILE_PATH,writeList)
+        return render(request,"product/addResult.html",context)
 
 def removeResult(request):
     product_id = request.POST['product_id']

@@ -32,8 +32,18 @@
       </form>
     </div>
     </nav>
+    {% if result %}
     <div class="alert alert-success" role="alert" style="padding-top: 10rem;">
-        <h4 class="alert-heading">Product Sucessfully Added!</h4>
+        <h4 class="alert-heading">Product Successfully Added!</h4>
         <p>You can go to All Products section and checkout the new product added.</p>
     </div>
+
+    {% else %}
+    <div class="alert alert-danger" role="alert" style="padding-top: 10rem;">
+      <h4 class="alert-heading">Price you added is invalid!</h4>
+      <p>Please recheck the price and addthe product.</p>
+    </div>
+
+    {% endif %}
+ 
 {% endblock %}

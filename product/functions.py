@@ -14,7 +14,8 @@ def getLists(path):
     lineCount = lineCounter(path)
     for i in range(lineCount): # pylint: disable=unused-variable
         line = fo.readline()
-        line = line[0:-1]
+        if (i!=(lineCount-1)):
+            line = line[0:-1]
         tempList = line.split(',')
         p_id = tempList[0]
         price = tempList[-1]
