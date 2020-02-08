@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from product.functions import *
 
-# Create your views here.
+
 FILE_PATH = 'product_list.txt'
 
 def index(request):
@@ -29,6 +29,9 @@ def addResult(request):
     product_id = request.POST['product_id']
     product_name = request.POST['product_name']
     price = request.POST['price']
+    #Check whether the price submitted is a valid price
+    #If it is not result=0 is passed to the template through render function 
+    #if the price is valid, result=1 is passed to the template through render function.
     try:
         if (price[0]=="$"):
             float(price[1:])
@@ -41,7 +44,7 @@ def addResult(request):
         return render(request,"product/addResult.html",context)
     else:
         if (price[0]!="$"):
-            price = "$"+ price
+            price = "$"+ price    #If $ is not there it is added
         context = {
             'result':1
         }
@@ -54,7 +57,7 @@ def removeResult(request):
     result = removeProduct(FILE_PATH,product_id)
     context = {
         'product_id':product_id,
-        'result':result
+        'result':result    #If a product is available for the given ID, result = 1. Else 0.
     }
     return render(request,"product/removeResult.html",context)
 

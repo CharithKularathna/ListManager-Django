@@ -15,7 +15,7 @@ def getLists(path):
     for i in range(lineCount): # pylint: disable=unused-variable
         line = fo.readline()
         if (i!=(lineCount-1)):
-            line = line[0:-1]
+            line = line[0:-1]  #Removes line break from prices except last one
         tempList = line.split(',')
         p_id = tempList[0]
         price = tempList[-1]
@@ -23,16 +23,19 @@ def getLists(path):
         entry = [p_id,p_name,price]
         entryList.append(entry)
     fo.close()
-    return entryList[1:]
+    return entryList[1:]   #First Line is product_id, name and price. So it is excluded
 
 
-
+#addProduct is used to add a product to the text file
 def addProduct(path, product):
     fo = open(path,'a')
     pString = ','.join(product)
     fo.write('\n'+pString)
     fo.close()
 
+#removes a product from text file.
+#If the ID given is valid the product is removed and q is returned from the list
+#If the ID given is invalid 0 is returned
 def removeProduct(path, product_id):
     readList = getLists(path)
     for entry in readList:
@@ -42,6 +45,7 @@ def removeProduct(path, product_id):
             return 1
     return 0
 
+#Called within the removeProduct function to rewrite the list
 def writeList(path,p_list):
     fo = open(path,'w')
     w_list=['id,product_name,price']
